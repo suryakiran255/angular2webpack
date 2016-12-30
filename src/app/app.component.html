@@ -1,0 +1,21 @@
+<!--<h1>{{title}}</h1>
+<div>
+    <img src="images/angular.png" alt="Angular 2">
+</div>
+<div>
+    <pre>
+        {{appContext | json}}
+    </pre>
+</div>-->
+<my-topnav></my-topnav>
+<div class="container-fluid text-center" style="margin-top:50px">
+    <div class="row content">
+        <div class="col-sm-2 sidenav">
+            <my-leftnav></my-leftnav>
+        </div>
+        <div class="col-sm-10 text-left" style="padding-top: 20px;padding-left: 20px;">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+<my-footer></my-footer>
