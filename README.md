@@ -16,7 +16,7 @@ We have no intention of updating the source. Discard everything "git-like" by de
 
     rd .git /S/Q 
 
-### Create a new got repo
+### Create a new git repo
 
 Start writing your own code now and add it to your own git repository
 
@@ -46,5 +46,6 @@ Grab its address (e.g. https://github.com/<my-org>/my-proj.git) and push the loc
 
 #### Note
 Please include the query strings to make it work properly. Sample url would be
-http://localhost:8080/?SPAppWebUrl=test&SPHostUrl=test&SPHostTitle=test&SPHostLogoUrl=test
+
+`http://localhost:8080/?SPAppWebUrl=test&SPHostUrl=test&SPHostTitle=test&SPHostLogoUrl=test`
 
