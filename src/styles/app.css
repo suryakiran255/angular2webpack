@@ -10,10 +10,14 @@
     /* Set gray background color and 100% height */
     .sidenav {
       padding-top: 20px;
-      padding-left: 30px;
+      padding-left: 20px;
       background-color: #f1f1f1;
       height: 100%;
       text-align:left;
+    }
+
+    .submenu{
+      margin-left: 15px;
     }
     
     /* Set black background color, white text and some padding */
@@ -21,6 +25,10 @@
       background-color: #555;
       color: white;
       padding: 15px;
+    }
+
+    .selected{
+      font-weight: bolder;
     }
     
     /* On small screens, set height to 'auto' for sidenav and grid */

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TopNav } from './models/topnav';
+import { TopNav } from '../../models/topnav';
 
 @Component({
     selector:'my-topnav',

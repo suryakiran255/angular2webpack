@@ -1,0 +1,7 @@
+<ul class="nav" *ngFor="let leftnav of leftNavItems">
+    <li>
+        <a *ngIf="!leftnav.IsExternal" href="" [routerLink]=[leftnav.Link] [routerLinkActive]="['selected']" [class.submenu]="leftnav.IsSubMenu">{{leftnav.DiplayName}}</a>
+        <a *ngIf="leftnav.IsExternal" [href]="leftnav.Link" target="_blank" [class.submenu]="leftnav.IsSubMenu">{{leftnav.DiplayName}}</a>
+        
+    </li>
+</ul>

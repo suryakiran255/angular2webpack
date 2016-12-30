@@ -26,6 +26,10 @@ export class SpContext{
         this.appContext.HostTitle=this.cookieService.get('SPHostTitle');
         this.appContext.HostLogoUrl=this.cookieService.get('SPHostLogoUrl');
 
+        if(this.appContext.AppWebUrl==null || this.appContext.HostUrl==null){
+            window.location.href='/';
+        }
+
         return this.appContext;
     }
 
@@ -43,6 +47,6 @@ export class SpContext{
         this.cookieService.put('SPHostLogoUrl',this.appContext.HostLogoUrl);
 
         //window.location.href=this.appContext.AppWebUrl+'/dist/main.html';
-        window.location.href='/home';
+        window.location.href='/main.html';
     }
 }

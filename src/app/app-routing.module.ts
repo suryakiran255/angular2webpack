@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule,  } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { ProgramsComponent } from './programs/programs.component';
 import { ApprovalsComponent } from './approvals/approvals.component';
-import { PageNotFoundComponent } from './page-not-found.component';
+import { PageNotFoundComponent } from './misc/page-not-found.component';
 
 const routes:Routes=[
     { path:'', pathMatch:'full', redirectTo:'home',},
@@ -15,7 +15,7 @@ const routes:Routes=[
 ];
 
 @NgModule({
-    imports:[RouterModule.forRoot(routes)],
+    imports:[RouterModule.forRoot(routes, { useHash:true })],
     exports:[RouterModule]
 })
 export class AppRoutingModule{ }
