@@ -15,7 +15,7 @@ module.exports={
         path: './dist',
         filename:'[name].js'
     },
-    devtool: 'source-map',
+    devtool: 'inline-source-map',
     module: {
         loaders:[
             {
@@ -58,7 +58,7 @@ module.exports={
         }),
         new ExtractTextPlugin('css/app.css'),
         new CommonsChunkPlugin({
-        name: ['vendor', 'polyfills']
+        names: ['vendor', 'polyfills']
       })
     ]
 };

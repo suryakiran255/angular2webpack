@@ -1,17 +1,43 @@
 import { Component } from '@angular/core';
-import { Helper } from './services/helper';
-import { SpContext } from './services/spcontext';
-import { AppContext } from './models/appcontext';
+import { IMyOptions, IMyDateModel} from 'mydatepicker';
 
 @Component({
-    providers:[Helper, SpContext, AppContext],
     selector:'app-launcher',
-    template:``
+    template:`
+    <h1>{{title}}</h1>
+    `
 })
 export class AppLauncherComponent {
-    helper:Helper=null;
-    constructor(_helper:Helper,spContext:SpContext){
-        this.helper=_helper;
-        spContext.appContext;
+    title:string="My Title";
+    selectedDate:string=null;
+    mymodel:Model;
+    text:string='foo';
+
+    private myDatePickerOptions:IMyOptions={
+        dateFormat:'dd.mm.yyyy',
+        width:'250px',
+        showClearDateBtn:true
+    };
+
+    constructor(){
+        this.mymodel=new Model();
+        this.mymodel.mydate=this.convertToJSONDate("23/03/2017");
     }
+
+    onDateChanged(event:IMyDateModel){
+        if(event.jsdate==null){
+            this.selectedDate="";
+        }
+        else{
+            this.selectedDate=event.jsdate.toLocaleDateString();
+        }
+    }
+    convertToJSONDate(strDate: string) {
+        let splitted = strDate.split("/");
+        return <Object>{ date: { year: Number(splitted[2]), month: Number(splitted[1]), day: Number(splitted[0]) } };
+    }
+ }
+
+ export class Model{
+     mydate:any;
  }

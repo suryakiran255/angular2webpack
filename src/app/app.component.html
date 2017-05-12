@@ -7,6 +7,9 @@
         {{appContext | json}}
     </pre>
 </div>-->
+<div class="loading-overlay" [hidden]="!loading">
+    <img src="/images/loader_new.gif" alt="">
+</div>
 <my-topnav></my-topnav>
 <div class="container-fluid text-center" style="margin-top:50px">
     <div class="row content">
@@ -19,3 +22,5 @@
     </div>
 </div>
 <my-footer></my-footer>
+{{loading}}
+

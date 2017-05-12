@@ -4,7 +4,13 @@
     "module": "commonjs",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "moduleResolution": "node",
+    "types": [
+            "node",
+            "jasmine"
+        ]
   },
   "compileOnSave": false,
   "buildOnSave": false,

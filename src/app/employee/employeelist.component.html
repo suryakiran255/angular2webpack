@@ -1,0 +1,35 @@
+<table>
+    <tr>
+    <td>
+        First Name
+    </td>
+    <td>
+        Last Name
+    </td>
+    <td>
+        Fulltime?
+    </td>
+    <td>
+        Payment Type
+    </td>
+    <td>
+        Language
+    </td>
+    <td>
+        Select
+    </td>
+    </tr>
+    <tr *ngFor="let employee of employeeList">
+        <td>{{employee.firstName}}</td>
+        <td>{{employee.lastName}}</td>
+        <td>{{employee.isFullTime}}</td>
+        <td>{{employee.paymentType}}</td>
+        <td>{{employee.primaryLangauge}}</td>
+        <td>
+        <input type="radio" name="radiogroup" [value]="employee" (change)="OnSelectChange(employee)" [(ngModel)]="selectedEmployee" [checked]="selectedEmployee==employee">
+        {{employee | json}}
+    </td>
+    </tr>
+</table>
+Input Employee {{inputEmployee | json}} <br>
+Selected Employee {{selectedEmployee | json}}
