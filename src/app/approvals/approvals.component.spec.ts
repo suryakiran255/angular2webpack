@@ -2,6 +2,9 @@ import { ComponentFixture,TestBed,ComponentFixtureAutoDetect,async } from '@angu
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { ApprovalsComponent } from './approvals.component';
+import { Helper } from '../services/helper';
+import { SpContext } from '../services/spcontext';
+import { AppContext } from '../models/appcontext';
 
 describe('ApprovalComponent',()=>{
     let comp:ApprovalsComponent;
@@ -10,8 +13,15 @@ describe('ApprovalComponent',()=>{
     let el:HTMLElement;
 
     beforeEach(async(()=>{
+        let spContextStub={
+            appContext:new AppContext()
+        };
+
+        spContextStub.appContext.HostUrl='test';
+
         TestBed.configureTestingModule({
             declarations:[ApprovalsComponent],
+            providers:[{provide:SpContext, useValue:spContextStub},Helper]
         })
         .compileComponents();
     }));
@@ -19,12 +29,15 @@ describe('ApprovalComponent',()=>{
     beforeEach(()=>{
         fixture=TestBed.createComponent(ApprovalsComponent);
         comp=fixture.componentInstance;
-        de=fixture.debugElement.query(By.css('h1'));
+        let spContext=TestBed.get(SpContext);
+        de=fixture.debugElement.query(By.css('.output'));
         el=de.nativeElement;
     });
 
     it('Should display the default title',()=>{
-        expect(el.textContent).toContain('This is Approvals Page');
+        fixture.detectChanges();
+        console.log(el.textContent);
+        expect(el.textContent).toEqual('test');
     });
 
 });
