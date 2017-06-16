@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "karma start",
+    "test-single": "karma start --single-run",
+    "show-coverage": "npm run test-single && http-server -c-1 -o -p 9875 App/test/coverage",
     "build": "webpack --progress",
     "build:prod": "webpack -p --progress",
     "serve": "webpack-dev-server --inline --progress --port 3000"
@@ -39,6 +41,7 @@
     "extract-text-webpack-plugin": "1.0.1",
     "file-loader": "0.9.0",
     "html-webpack-plugin": "2.24.1",
+    "http-server": "0.9.0",
     "jasmine": "2.5.2",
     "karma": "1.3.0",
     "karma-chrome-launcher": "2.0.0",
@@ -46,6 +49,8 @@
     "karma-jasmine-html-reporter": "0.2.2",
     "karma-sourcemap-loader": "0.3.7",
     "karma-webpack": "1.8.0",
+    "karma-remap-istanbul": "0.6.0",
+    "sourcemap-istanbul-instrumenter-loader": "0.2.0",
     "postcss-loader": "1.2.0",
     "raw-loader": "0.5.1",
     "style-loader": "0.13.1",
